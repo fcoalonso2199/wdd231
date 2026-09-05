@@ -1,0 +1,138 @@
+:root {
+    --primary-color: #003366;
+    --secondary-color: #e6f2ff;
+    --completed-color: #d4edda;
+    --text-color: #333333;
+    --font-family: 'Roboto', sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: bold;
+}
+
+#menu-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+nav {
+    display: none;
+    background-color: #002244;
+}
+
+nav.open {
+    display: block;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    display: block;
+    color: white;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+}
+
+nav a:hover, nav a.active {
+    background-color: #004488;
+}
+
+main {
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: #f9f9f9;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.filters {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.filters button {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--primary-color);
+    background-color: white;
+    color: var(--primary-color);
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.filters button:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.5rem;
+}
+
+.course-card {
+    border: 1px solid #aaa;
+    padding: 0.75rem;
+    border-radius: 4px;
+    text-align: center;
+    background-color: #fff;
+    font-weight: bold;
+}
+
+.course-card.completed {
+    background-color: var(--completed-color);
+    border-color: #28a745;
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+footer a {
+    color: #88ccff;
+    margin: 0 0.5rem;
+}

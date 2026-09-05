@@ -1,0 +1,28 @@
+@media (min-width: 768px) {
+    #menu-button {
+        display: none;
+    }
+
+    nav {
+        display: block;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    nav a {
+        padding: 1rem 1.5rem;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 1rem;
+    }
+
+    .full-width {
+        grid-column: 1 / -1;
+    }
+}

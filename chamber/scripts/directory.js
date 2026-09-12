@@ -1,65 +1,84 @@
-[
-  {
-    "name": "Artesanías del Sahara",
-    "address": "12 Rue de la Paix, Timbuktu",
-    "phone": "+223 20 70 11 22",
-    "website": "https://artesaniassahara.example.com",
-    "image": "artesanias_sahara.svg",
-    "membership_level": 3,
-    "tagline": "Joyas y alfombras autóctonas hechas a mano"
-  },
-  {
-    "name": "Librería y Manuscritos Sankore",
-    "address": "45 Ave de la Culture, Timbuktu",
-    "phone": "+223 20 70 33 44",
-    "website": "https://manuscritos-sankore.example.com",
-    "image": "sankore_books.svg",
-    "membership_level": 3,
-    "tagline": "Preservando la historia literaria de Tombuctú"
-  },
-  {
-    "name": "Restaurante Olistan Níger",
-    "address": "88 Bulevar del Río, Timbuktu",
-    "phone": "+223 20 70 55 66",
-    "website": "https://olistan-restaurant.example.com",
-    "image": "olistan_restaurant.svg",
-    "membership_level": 2,
-    "tagline": "Sabores tradicionales del Sahel"
-  },
-  {
-    "name": "Logística Caravan Express",
-    "address": "102 Ruta Comercial Norte, Timbuktu",
-    "phone": "+223 20 70 77 88",
-    "website": "https://caravanexpress.example.com",
-    "image": "caravan_express.svg",
-    "membership_level": 2,
-    "tagline": "Transporte y distribución de mercancías regional"
-  },
-  {
-    "name": "Hotel Oasis Djinguereber",
-    "address": "5 Plaza Mayor, Timbuktu",
-    "phone": "+223 20 70 99 00",
-    "website": "https://hoteloasisdjinguereber.example.com",
-    "image": "hotel_oasis.svg",
-    "membership_level": 3,
-    "tagline": "Hospedaje ecológico e inmersión cultural"
-  },
-  {
-    "name": "Ecológico Solar Sahel",
-    "address": "210 Zona Industrial, Timbuktu",
-    "phone": "+223 20 71 12 34",
-    "website": "https://solarsahel.example.com",
-    "image": "solar_sahel.svg",
-    "membership_level": 1,
-    "tagline": "Soluciones energéticas sostenibles para empresas"
-  },
-  {
-    "name": "Cooperativa Agrícola Timbuktu",
-    "address": "14 Camino Verde, Timbuktu",
-    "phone": "+223 20 71 56 78",
-    "website": "https://coopagricola-timbuktu.example.com",
-    "image": "coop_agricola.svg",
-    "membership_level": 1,
-    "tagline": "Productos locales frescos directos del campo"
+document.addEventListener("DOMContentLoaded", () => {
+  // Alternar menú de navegación móvil
+  const menuToggle = document.getElementById("menu-toggle");
+  const navMenu = document.getElementById("nav-menu");
+
+  if (menuToggle && navMenu) {
+    menuToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("open");
+    });
   }
-]
+
+  // Actualización dinámica de fechas en el pie de página
+  const currentYearSpan = document.getElementById("current-year");
+  const lastModifiedSpan = document.getElementById("last-modified");
+
+  if (currentYearSpan) {
+    currentYearSpan.textContent = new Date().getFullYear();
+  }
+  if (lastModifiedSpan) {
+    lastModifiedSpan.textContent = document.lastModified;
+  }
+
+  // Carga asíncrona de datos JSON
+  const membersContainer = document.getElementById("members-container");
+  const btnGrid = document.getElementById("btn-grid");
+  const btnList = document.getElementById("btn-list");
+
+  if (membersContainer) {
+    fetchMembers();
+  }
+
+  async function fetchMembers() {
+    try {
+      const response = await fetch("data/members.json");
+      if (!response.ok) {
+        throw new Error("Error al cargar datos de los miembros");
+      }
+      const members = await response.json();
+      displayMembers(members);
+    } catch (error) {
+      console.error(error);
+      membersContainer.innerHTML = "<p>No se pudo cargar el directorio de miembros.</p>";
+    }
+  }
+
+  function displayMembers(members) {
+    membersContainer.innerHTML = "";
+    const membershipNames = { 1: "Miembro Base", 2: "Membresía Plata", 3: "Membresía Oro" };
+
+    members.forEach((member) => {
+      const card = document.createElement("section");
+      card.className = "member-card";
+
+      card.innerHTML = `
+        <img src="images/${member.image}" alt="Logo de ${member.name}" loading="lazy">
+        <h3>${member.name}</h3>
+        <p class="tagline">${member.tagline || ''}</p>
+        <p><strong>Dirección:</strong> ${member.address}</p>
+        <p><strong>Teléfono:</strong> ${member.phone}</p>
+        <p><a href="${member.website}" target="_blank" rel="noopener noreferrer">${member.website.replace('https://', '')}</a></p>
+        <span class="level level-${member.membership_level}">${membershipNames[member.membership_level] || 'Miembro'}</span>
+      `;
+
+      membersContainer.appendChild(card);
+    });
+  }
+
+  // Conmutador de vista Cuadrícula / Lista
+  if (btnGrid && btnList) {
+    btnGrid.addEventListener("click", () => {
+      membersContainer.classList.add("grid");
+      membersContainer.classList.remove("list");
+      btnGrid.classList.add("active");
+      btnList.classList.remove("active");
+    });
+
+    btnList.addEventListener("click", () => {
+      membersContainer.classList.add("list");
+      membersContainer.classList.remove("grid");
+      btnList.classList.add("active");
+      btnGrid.classList.remove("active");
+    });
+  }
+});

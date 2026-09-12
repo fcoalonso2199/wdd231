@@ -33,30 +33,30 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
       const response = await fetch("data/members.json");
       if (!response.ok) {
-        throw new Error("Error al cargar datos de los miembros");
+        throw new Error("Network response was not ok");
       }
       const members = await response.json();
       displayMembers(members);
     } catch (error) {
       console.error(error);
-      membersContainer.innerHTML = "<p>No se pudo cargar el directorio de miembros.</p>";
+      membersContainer.innerHTML = "<p>Not available.</p>";
     }
   }
 
   function displayMembers(members) {
     membersContainer.innerHTML = "";
-    const membershipNames = { 1: "Miembro Base", 2: "Membresía Plata", 3: "Membresía Oro" };
+    const membershipNames = { 1: "Base Member", 2: "Silver Membership", 3: "Gold Membership" };
 
     members.forEach((member) => {
       const card = document.createElement("section");
       card.className = "member-card";
 
       card.innerHTML = `
-        <img src="images/${member.image}" alt="Logo de ${member.name}" loading="lazy">
+        <img src="images/${member.image}" alt="Logo of ${member.name}" loading="lazy">
         <h3>${member.name}</h3>
         <p class="tagline">${member.tagline || ''}</p>
-        <p><strong>Dirección:</strong> ${member.address}</p>
-        <p><strong>Teléfono:</strong> ${member.phone}</p>
+        <p><strong>Address:</strong> ${member.address}</p>
+        <p><strong>Phone:</strong> ${member.phone}</p>
         <p><a href="${member.website}" target="_blank" rel="noopener noreferrer">${member.website.replace('https://', '')}</a></p>
         <span class="level level-${member.membership_level}">${membershipNames[member.membership_level] || 'Miembro'}</span>
       `;

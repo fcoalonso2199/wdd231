@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function fetchMembers() {
     try {
-      const response = await fetch("scripts/members.js");
+      const response = await fetch("data/members.json");
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }

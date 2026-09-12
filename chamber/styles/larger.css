@@ -1,0 +1,43 @@
+@media (min-width: 640px) {
+  #members-container.grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  #members-container.list .member-card {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media (min-width: 960px) {
+  #menu-toggle {
+    display: none;
+  }
+
+  nav {
+    display: block !important;
+    width: auto;
+  }
+
+  nav ul {
+    flex-direction: row;
+    margin-top: 0;
+    gap: 1.5rem;
+  }
+
+  .directory-header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #members-container.grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}

@@ -4,49 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- Estándar Meta Tags -->
-  <title>Directorio de Empresas - Cámara de Comercio de Tombuctú</title>
-  <meta name="description" content="Directorio comercial oficial de empresas y servicios locales miembros de la Cámara de Comercio de Tombuctú. Conéctate con el comercio local.">
-  <meta name="author" content="Marie Martínez - WDD 231">
+  <title>Directory</title>
+  <meta name="description" content="Directory">
+  <meta name="author" content="Francisco Javier Alonso - WDD 231">
   
-  <!-- Favicon -->
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   
-  <!-- Meta etiquetas para Redes Sociales (Facebook / Open Graph) -->
-  <meta property="og:title" content="Directorio de Empresas - Cámara de Comercio de Tombuctú">
+  <meta property="og:title" content="Directory - Celaya Chamber of Commerce">
   <meta property="og:type" content="website">
-  <meta property="og:description" content="Explora el directorio oficial de empresas, servicios y comerciantes locales que promueven el desarrollo económico en Tombuctú.">
-  <meta property="og:image" content="https://raw.githubusercontent.com/usuario/repositorio/main/images/og_image.png">
-  <meta property="og:url" content="https://usuario.github.io/repositorio/directory.html">
+  <meta property="og:description" content="Explora el directorio oficial de empresas, servicios y comerciantes locales que promueven el desarrollo económico en Celaya.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/franciscojavieralonso/wdd231/main/images/og_image.png">
+  <meta property="og:url" content="https://fcoalonso2199.github.io/wdd231/directory.html">
 
-  <!-- Hojas de estilo CSS (Normalización + Responsive Layout) -->
   <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/small.css">
   <link rel="stylesheet" href="styles/larger.css">
 
-  <!-- Fuentes de Google -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
-  <!-- Script principal -->
   <script src="scripts/directory.js" defer></script>
 </head>
 <body>
 
-  <!-- Encabezado global -->
   <header>
     <div class="brand">
-      <img src="images/chamber_logo.svg" alt="Logotipo Cámara de Comercio de Tombuctú">
-      <h1>Cámara de Comercio de Tombuctú</h1>
+      <img src="images/logo.png" alt="Logo of the Chamber of Commerce of Celaya" class="logo">
+      <h1>Directory</h1>
     </div>
-    <button id="menu-toggle" aria-label="Abrir menú de navegación">☰</button>
+    <button id="menu-toggle" aria-label="Open navigation menu">☰</button>
     <nav id="nav-menu">
       <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="discover.html">Descubre</a></li>
-        <li><a href="directory.html" class="active">Directorio</a></li>
-        <li><a href="join.html">Únete</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="discover.html">Explore</a></li>
+        <li><a href="directory.html" class="active">Directory</a></li>
+        <li><a href="join.html">Join</a></li>
       </ul>
     </nav>
   </header>
@@ -54,10 +47,10 @@
   <!-- Contenido principal -->
   <main>
     <section class="directory-header">
-      <h2>Directorio de Miembros Comerciales</h2>
+      <h2>Directory of Commercial Members</h2>
       <div class="view-buttons">
-        <button id="btn-grid" class="active" aria-label="Vista en Cuadrícula">Cuadrícula ▦</button>
-        <button id="btn-list" aria-label="Vista en Lista">Lista ☰</button>
+        <button id="btn-grid" class="active" aria-label="Grid View">Grid ▦</button>
+        <button id="btn-list" aria-label="List View">List ☰</button>
       </div>
     </section>
 
@@ -69,9 +62,9 @@
   <footer>
     <div class="footer-content">
       <div class="footer-info">
-        <h3>Cámara de Comercio de Tombuctú</h3>
-        <p>10 Rue De La Paix, Timbuktu, Mali 999</p>
-        <p>Email: info@timbuktucc.org | Tel: (223) 555-2300</p>
+        <h3>Chamber of Commerce of Celaya</h3>
+        <p>10 Rue De La Paix, Celaya, Guanajuato 999</p>
+        <p>Email: info@celayaCC.org | Tel: (223) 555-2300</p>
       </div>
       <div class="footer-socials">
         <a href="https://youtube.com" target="_blank" aria-label="YouTube">YouTube</a>
@@ -84,8 +77,8 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; <span id="current-year"></span> Cámara de Comercio de Tombuctú | Todos los derechos reservados.</p>
-      <p>Última modificación: <span id="last-modified"></span></p>
+      <p>&copy; <span id="current-year"></span> Chamber of Commerce of Celaya | All rights reserved.</p>
+      <p>Last modified: <span id="last-modified"></span></p>
     </div>
   </footer>
 

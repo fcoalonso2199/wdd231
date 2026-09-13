@@ -81,8 +81,8 @@ nav a {
 }
 
 nav a:hover, nav a.active {
-  background-color: var(--secondary-color);
-  color: var(--primary-color);
+  background-color: rgb(197, 155, 39);
+  color: #000000; /* o rgb(0, 0, 0) */
 }
 
 main {

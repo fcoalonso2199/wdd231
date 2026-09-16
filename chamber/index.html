@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Home - Celaya Chamber of Commerce</title>
+  <meta name="description" content="Welcome to the Celaya Chamber of Commerce. Connecting local businesses, driving regional growth, and fostering economic development in Celaya.">
+  <meta name="author" content="Francisco Javier Alonso - WDD 231">
+  
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Celaya Chamber of Commerce - Home">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="Empowering businesses and supporting our community in Celaya. Check out upcoming events, local weather, and featured member spotlights.">
+  <meta property="og:image" content="https://fcoalonso2199.github.io/wdd231/chamber/images/og_image.png">
+  <meta property="og:url" content="https://fcoalonso2199.github.io/wdd231/index.html">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/larger.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Scripts -->
+  <script src="scripts/home.js" defer></script>
+</head>
+<body>
+
+  <!-- Global Header -->
+  <header>
+    <div class="brand">
+      <img src="images/logo.png" alt="Logo of the Chamber of Commerce of Celaya" class="logo">
+      <span class="site-title">Celaya Chamber of Commerce</span>
+    </div>
+    <button id="menu-toggle" aria-label="Open navigation menu">☰</button>
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="discover.html">Explore</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="join.html">Join</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="home-container">
+    
+    <!-- Hero Section (Using standard <img> tag, NOT CSS background) -->
+    <section class="hero-section">
+      <div class="hero-image-wrapper">
+        <img src="images/hero-large.jpg" alt="Celaya skyline and business center banner" class="hero-img" width="1200" height="500">
+        <div class="hero-cta-overlay">
+          <h2>Grow Your Business in Celaya</h2>
+          <p>Join our thriving community of entrepreneurs and industry leaders.</p>
+          <a href="join.html" class="cta-button">Join the Chamber</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content Layout Grid -->
+    <div class="home-grid">
+      
+      <!-- Current Events Section -->
+      <section class="card events-card">
+        <h2>Upcoming Events</h2>
+        <ul class="event-list">
+          <li>
+            <span class="event-date">Oct 15</span>
+            <div class="event-details">
+              <strong>Annual Celaya Trade Expo</strong>
+              <p>Convention Center • 9:00 AM</p>
+            </div>
+          </li>
+          <li>
+            <span class="event-date">Nov 02</span>
+            <div class="event-details">
+              <strong>Leadership &amp; Networking Breakfast</strong>
+              <p>Grand Plaza Hotel • 8:00 AM</p>
+            </div>
+          </li>
+          <li>
+            <span class="event-date">Nov 20</span>
+            <div class="event-details">
+              <strong>Small Business Tech Workshop</strong>
+              <p>Chamber HQ Auditorium • 10:00 AM</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- OpenWeatherMap Weather Section -->
+      <section class="card weather-card">
+        <h2>Celaya Weather</h2>
+        <div class="weather-current">
+          <img id="weather-icon" src="images/placeholder-weather.png" alt="Weather condition icon" width="64" height="64">
+          <div class="weather-temp-info">
+            <p class="current-temp"><span id="current-temp">--</span>°C</p>
+            <p id="weather-desc">Loading weather...</p>
+          </div>
+        </div>
+        <hr class="weather-divider">
+        <h3>3-Day Forecast</h3>
+        <div id="weather-forecast" class="forecast-grid">
+          <!-- 3-Day Forecast populated dynamically by JavaScript -->
+        </div>
+      </section>
+
+      <!-- Member Spotlights Section -->
+      <section class="spotlights-section">
+        <h2>Member Spotlights</h2>
+        <div id="spotlight-cards" class="spotlight-grid">
+          <!-- 2 to 3 Gold/Silver member spotlight cards dynamically populated -->
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-info">
+        <h2>Chamber of Commerce of Celaya</h2>
+        <p>10 Rue De La Paix, Celaya, Guanajuato 999</p>
+        <p>Email: info@celayaCC.org | Tel: (223) 555-2300</p>
+      </div>
+      <div class="footer-socials">
+        <a href="https://youtube.com" target="_blank" aria-label="YouTube">YouTube</a>
+        <a href="https://twitter.com" target="_blank" aria-label="Twitter">Twitter</a>
+        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">LinkedIn</a>
+      </div>
+      <div class="footer-dev">
+        <p>WDD231 Class Project</p>
+        <p>Franco Alonso</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="current-year"></span> Chamber of Commerce of Celaya | All rights reserved.</p>
+      <p>Last modified: <span id="last-modified"></span></p>
+    </div>
+  </footer>
+
+</body>
+</html>

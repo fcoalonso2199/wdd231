@@ -1,5 +1,5 @@
 // --- OpenWeatherMap Configurations for Celaya, Guanajuato ---
-const API_KEY = 'YOUR_OPENWEATHERMAP_API_KEY';
+const API_KEY = 'b9bfe58af234cde12e7e3a64c332266d';
 const LAT = '20.5218';
 const LON = '-100.8146';
 
@@ -36,7 +36,6 @@ function initMenuAndFooter() {
   }
 }
 
-// --- Fetch & Display Current Weather ---
 async function fetchCurrentWeather() {
   try {
     const response = await fetch(currentWeatherUrl);
@@ -70,7 +69,6 @@ function displayCurrentWeather(data) {
   }
 }
 
-// --- Fetch & Display 3-Day Forecast ---
 async function fetchForecast() {
   try {
     const response = await fetch(forecastUrl);
@@ -88,7 +86,6 @@ function displayForecast(data) {
   if (!container) return;
   container.innerHTML = '';
 
-  // Filter 3 forecast points around 12:00 PM for distinct consecutive days
   const dailyEntries = data.list
     .filter(item => item.dt_txt.includes('12:00:00'))
     .slice(0, 3);
@@ -108,20 +105,17 @@ function displayForecast(data) {
   });
 }
 
-// --- Fetch & Display Random Gold/Silver Member Spotlights ---
 async function fetchSpotlights() {
   try {
     const response = await fetch(membersUrl);
     if (response.ok) {
       const members = await response.json();
       
-      // Filter members with Gold/Silver status (or numeric levels 2 & 3)
       const qualified = members.filter(m => {
         const level = String(m.membership || m.membershipLevel).toLowerCase();
         return level === 'gold' || level === 'silver' || level === '3' || level === '2';
       });
 
-      // Randomly pick 2 or 3 members
       const count = Math.min(qualified.length, 3);
       const shuffled = [...qualified].sort(() => 0.5 - Math.random());
       const selected = shuffled.slice(0, count);

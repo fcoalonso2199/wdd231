@@ -10,29 +10,24 @@
   
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   
-  <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Celaya Chamber of Commerce - Home">
   <meta property="og:type" content="website">
   <meta property="og:description" content="Empowering businesses and supporting our community in Celaya. Check out upcoming events, local weather, and featured member spotlights.">
   <meta property="og:image" content="https://fcoalonso2199.github.io/wdd231/chamber/images/og_image.png">
   <meta property="og:url" content="https://fcoalonso2199.github.io/wdd231/index.html">
 
-  <!-- Stylesheets -->
   <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/small.css">
   <link rel="stylesheet" href="styles/larger.css">
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
-  <!-- Scripts -->
   <script src="scripts/home.js" defer></script>
 </head>
 <body>
 
-  <!-- Global Header -->
   <header>
     <div class="brand">
       <img src="images/logo.png" alt="Logo of the Chamber of Commerce of Celaya" class="logo">
@@ -49,13 +44,11 @@
     </nav>
   </header>
 
-  <!-- Main Content Area -->
   <main class="home-container">
     
-    <!-- Hero Section (Using standard <img> tag, NOT CSS background) -->
     <section class="hero-section">
       <div class="hero-image-wrapper">
-        <img src="images/hero-large.jpg" alt="Celaya skyline and business center banner" class="hero-img" width="1200" height="500">
+        <img src="images/imagesc.webp" alt="Celaya skyline and business center banner" class="hero-img" width="1200" height="500">
         <div class="hero-cta-overlay">
           <h2>Grow Your Business in Celaya</h2>
           <p>Join our thriving community of entrepreneurs and industry leaders.</p>
@@ -64,10 +57,8 @@
       </div>
     </section>
 
-    <!-- Main Content Layout Grid -->
     <div class="home-grid">
       
-      <!-- Current Events Section -->
       <section class="card events-card">
         <h2>Upcoming Events</h2>
         <ul class="event-list">
@@ -95,7 +86,6 @@
         </ul>
       </section>
 
-      <!-- OpenWeatherMap Weather Section -->
       <section class="card weather-card">
         <h2>Celaya Weather</h2>
         <div class="weather-current">
@@ -108,22 +98,18 @@
         <hr class="weather-divider">
         <h3>3-Day Forecast</h3>
         <div id="weather-forecast" class="forecast-grid">
-          <!-- 3-Day Forecast populated dynamically by JavaScript -->
         </div>
       </section>
 
-      <!-- Member Spotlights Section -->
       <section class="spotlights-section">
         <h2>Member Spotlights</h2>
         <div id="spotlight-cards" class="spotlight-grid">
-          <!-- 2 to 3 Gold/Silver member spotlight cards dynamically populated -->
         </div>
       </section>
 
     </div>
   </main>
 
-  <!-- Global Footer -->
   <footer>
     <div class="footer-content">
       <div class="footer-info">
